@@ -1,4 +1,2 @@
 venv
 Dockerfile
-requirements.txt
-fly.toml
