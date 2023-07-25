@@ -15,20 +15,15 @@ from flet import (
     alignment,
     padding,
     ResponsiveRow,
-    border,
     Container,
     Text,
-    margin,
     LinearGradient,
     CircleAvatar,
     TextField,
-    colors,
-    ElevatedButton,
     TextButton,
     InputBorder,
     TextStyle,
 )
-
 
 def main(page: Page):
 
@@ -69,7 +64,8 @@ def main(page: Page):
 
     #
     def paste_click(e):
-        url_tiktok = pyperclip.paste()
+        # url_tiktok = pyperclip.paste()
+        url_tiktok = pyperclip.waitForPaste()
         url_tiktok_textField.value = url_tiktok
         page.update()
 
@@ -257,4 +253,4 @@ def main(page: Page):
 
 
 if __name__ == "__main__":
-    flet.app(target=main, view=flet.WEB_BROWSER)
+    flet.app(target=main,port=8000, view=flet.WEB_BROWSER)
